@@ -1,0 +1,59 @@
+::ng-deep .ng-select.ng-select-single .ng-select-container,
+.ng-select .ng-select-container {
+  height: 52px;
+  border-radius: 8px;
+  border: solid 1px #dee2e6;
+  color: #33303e;
+  font-family: "Inter";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+::ng-deep .ng-select .ng-select-container {
+  height: 52px;
+  border-radius: 8px;
+  border: solid 1px #dee2e6;
+  color: #33303e;
+  font-family: "Inter";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+::ng-deep .ng-select .ng-select-container .ng-value-container {
+  padding-left: 18px;
+}
+
+::ng-deep .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+  top: 12px;
+  padding-left: 18px;
+}
+
+::ng-deep .ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+  border: 1px solid var(--bs-secondary);
+  background: rgba(83, 11, 59, 0.05);
+  box-shadow: none;
+}
+
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+  background-color: rgba(83, 11, 59, 0.05) !important;
+}
+
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+  background-color: rgba(83, 11, 59, 0.05);
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.form-select {
+  margin-bottom: 1rem;
+}
