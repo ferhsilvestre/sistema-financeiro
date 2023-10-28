@@ -6,10 +6,14 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictNullChecks": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -19,10 +23,25 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
+  },
+  "paths": {
+    "@environment": ["web/src/environments/environment.ts"],
+    "@components/*": ["web/src/app/components/*"],
+    "@forms/*": ["web/src/app/forms/*"],
+    "@enums/*": ["web/src/app/core/enums/*"],
+    "@configs/*": ["web/src/app/core/configs/*"],
+    "@models/*": ["web/src/app/core/models/*"],
+    "@interfaces/*": ["web/src/app/core/interfaces/*"],
+    "@guards/*": ["web/src/app/core/guards/*"],
+    "@services/*": ["web/src/app/core/services/*"],
+    "@repositories/*": ["web/src/app/core/repositories/*"],
+    "@directives/*": ["web/src/app/shared/directives/*"],
+    "@utils/*": ["web/src/app/core/utils/*"],
+    "@layouts/*": ["web/src/app/layouts/*"],
+    "@validators/*": ["web/src/app/core/validators/*"],
+    "@pipes/*": ["web/src/app/shared/pipes/*"],
+    "@core/*": ["web/src/app/core/*"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
