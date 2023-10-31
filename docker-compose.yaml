@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  api:
+    build:
+      context: ./api
+    container_name: api
+    restart: always
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./api:/api
+    depends_on:
+      - database
+
+  database:
+    build:
+      context: ./database
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: sistema_financeiro
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database/sistema_financeiro.sql:/docker-entrypoint-initdb.d/sistema_financeiro.sql
+
+  frontend:
+    build:
+      context: ./web
+    container_name: frontend
+    ports:
+      - "4206:4206"
+    volumes:
+      - ./web/src:/app/src
+    depends_on:
+      - api
+
