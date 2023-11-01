@@ -6,6 +6,7 @@ from flask import jsonify, request
 from flask_jwt_extended import JWTManager
 
 from resources.start import Start
+from resources.recebimentos import AtualizaRecebimento, Recebimentos, CadastraRecebimento, DeletaRecebimento
 
 import os
 from dotenv import load_dotenv
@@ -50,6 +51,16 @@ def token_de_acesso_invalidado():
 
 api.add_resource(Start, "/")
 docs.register(Start)
+
+# Rotas de recebimentos
+api.add_resource(AtualizaRecebimento, "/recebimentos/atualizar/<string:recebimento_id>")
+docs.register(AtualizaRecebimento)
+api.add_resource(Recebimentos, "/recebimentos/<string:user_id>/<string:mes>/<string:ano>")
+docs.register(Recebimentos)
+api.add_resource(CadastraRecebimento, "/recebimentos/cadastrar")
+docs.register(CadastraRecebimento)
+api.add_resource(DeletaRecebimento, "/recebimentos/apagar/<string:recebimento_id>/<string:user_id>")
+docs.register(DeletaRecebimento)
 
 # Main Function
 if __name__ == '__main__':
