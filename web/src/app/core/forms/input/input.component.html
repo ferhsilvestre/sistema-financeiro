@@ -1,0 +1,11 @@
+<label *ngIf="label" [for]="id" class="form-label">{{ label }}</label>
+
+<input
+  [id]="id"
+  [type]="type"
+  class="form-control"
+  [formControl]="control"
+  [attr.placeholder]="placeholder"
+  [mask]="useMask"
+  [autofocus]="autofocus ? true : false"
+/>
