@@ -1,0 +1,48 @@
+:host {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .left-content {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .right-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 40px 54px;
+    background-color: #fff;
+  }
+
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #d5d5d5;
+  }
+}

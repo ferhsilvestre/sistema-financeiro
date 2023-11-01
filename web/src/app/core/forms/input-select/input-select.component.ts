@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { inputUUID } from '@burand/angular/utils';
 
-import { ControlValueAccessorConnectorComponent } from '../control-value-accessor-connector';
 import { CommonModule } from '@angular/common';
+import { ControlValueAccessorConnectorComponent } from '../control-value-accessor-connector';
 
 @Component({
   selector: 'app-input-select',
@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common';
     }
   ],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgSelectModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
 })
 export class InputSelectComponent extends ControlValueAccessorConnectorComponent {
   @Input() readonly = false;
