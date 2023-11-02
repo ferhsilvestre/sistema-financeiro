@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid p-0 px-5">
+    <a class="navbar-brand text-white me-5 cursor-pointer" routerLink="/home">Sistema Financeiro</a>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link text-light" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link text-light" aria-current="page" routerLink="/auth/login">Login</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link text-light" routerLink="/auth/signup">Cadastro</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link text-light" routerLink="/contact">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container p-5 vh-100">
+  <div class="row mb-4">
+    <div class="col-12">
+      <h2>Contato</h2>
+    </div>
+  </div>
+  <div class="row mb-4 d-xl-flex justify-content-xl-between justify-content-sm-center">
+    <div class="col-12 col-xl-6 mb-sm-4">
+      <img
+        class="mw-100"
+        src="https://runtalent.it/wp-content/uploads/2023/02/runtalent_2023_12.01_blog_thumb-1.png"
+        alt=""
+      />
+    </div>
+    <div class="col-sm-12 col-lg-8 col-xl-5 mb-sm-4">
+      <div class="form">
+        <div class="row mb-4">
+          <div class="col-12">
+            <h4>Entre em contato.</h4>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-12 mb-3">
+            <label for="name" class="mb-1">Nome</label>
+            <input id="name" type="text" class="form-control" />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="email" class="mb-1">E-mail</label>
+            <input id="email" type="email" class="form-control" />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="subject" class="mb-1">Assunto</label>
+            <input id="subject" type="text" class="form-control" />
+          </div>
+          <div class="col-12">
+            <label for="message" class="mb-1">Mensagem</label>
+            <textarea id="message" type="" class="form-control" rows="4"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-info w-100" type="button">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
