@@ -7,7 +7,7 @@ from flask_jwt_extended import JWTManager
 
 from resources.start import Start
 from resources.recebimentos import AtualizaRecebimento, Recebimentos, CadastraRecebimento, DeletaRecebimento
-from resources.users import UserRegister
+from resources.users import UserAuth, UserRegister
 
 import os
 from dotenv import load_dotenv
@@ -54,6 +54,8 @@ api.add_resource(Start, "/")
 docs.register(Start)
 
 # Rotas de usuário
+api.add_resource(UserAuth, "/user/auth")
+docs.register(UserAuth)
 api.add_resource(UserRegister, "/user/cadastrar")
 docs.register(UserRegister)
 
