@@ -7,6 +7,7 @@ from flask_jwt_extended import JWTManager
 
 from resources.start import Start
 from resources.recebimentos import AtualizaRecebimento, Recebimentos, CadastraRecebimento, DeletaRecebimento
+from resources.users import UserRegister
 
 import os
 from dotenv import load_dotenv
@@ -51,6 +52,10 @@ def token_de_acesso_invalidado():
 
 api.add_resource(Start, "/")
 docs.register(Start)
+
+# Rotas de usuário
+api.add_resource(UserRegister, "/user/cadastrar")
+docs.register(UserRegister)
 
 # Rotas de recebimentos
 api.add_resource(AtualizaRecebimento, "/recebimentos/atualizar/<string:recebimento_id>")
