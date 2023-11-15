@@ -4,7 +4,7 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="formGroup">
+    <form [formGroup]="formGroup" (ngSubmit)="submit()">
       <div class="row mb-3">
         <div class="col-6">
           <app-input placeholder="Ex: Ingresso" label="Nome" formControlName="description"></app-input>
@@ -13,7 +13,7 @@
           <app-input placeholder="Ex: R$29,99" label="Valor" formControlName="value"></app-input>
         </div>
       </div>
-      <div class="row">
+      <div class="row mb-3">
         <div class="col-6">
           <app-input placeholder="Ex: 24/10/2023" label="Data" type="date" formControlName="date"></app-input>
         </div>
@@ -21,10 +21,12 @@
           <app-input placeholder="Ex: Lazer" label="Categoria" formControlName="category"></app-input>
         </div>
       </div>
+      <div class="row d-flex justify-content-end">
+        <div class="col-auto">
+          <button type="button" class="btn btn-danger me-3" (click)="closeModal()">Fechar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
     </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="closeModal()">Fechar</button>
-    <button type="button" class="btn btn-primary">Salvar</button>
   </div>
 </div>

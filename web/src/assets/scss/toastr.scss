@@ -1,0 +1,17 @@
+@import "ngx-toastr/toastr";
+
+.toast-info {
+  background-color: var(--bs-primary);
+}
+
+.toast-error {
+  background-color: var(--bs-danger);
+}
+
+.toast-success {
+  background-color: var(--bs-success);
+}
+
+.toast-warning {
+  background-color: var(--bs-warning);
+}
