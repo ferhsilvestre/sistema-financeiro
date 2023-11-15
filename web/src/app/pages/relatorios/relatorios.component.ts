@@ -1,6 +1,7 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetalhesRelatorioComponent } from './detalhes-relatorio/detalhes-relatorio.component';
 
 @Component({
   standalone: true,
@@ -10,6 +11,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./relatorios.component.scss']
 })
 export class RelatoriosComponent implements OnInit {
+  constructor(private ngbModal: NgbModal) {}
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -44,4 +47,27 @@ export class RelatoriosComponent implements OnInit {
       lucro: 200
     }
   ];
+
+  relatorioAnual = [
+    {
+      recebido: 400,
+      gasto: 200,
+      lucro: 200
+    }
+  ];
+
+  async openModal(): Promise<void> {
+    const modalRef = this.ngbModal.open(DetalhesRelatorioComponent, {
+      size: 'lg',
+      centered: true
+    });
+
+    // if (params) {
+    //   modalRef.componentInstance.params = params;
+    // }
+
+    const result = await modalRef.result;
+
+    console.log(result);
+  }
 }
