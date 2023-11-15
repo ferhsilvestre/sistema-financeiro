@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { inputUUID } from '@burand/angular/utils';
 
 import { CommonModule } from '@angular/common';
+import { v4 as uuid } from 'uuid';
 import { ControlValueAccessorConnectorComponent } from '../control-value-accessor-connector';
 
 @Component({
@@ -17,7 +17,7 @@ import { ControlValueAccessorConnectorComponent } from '../control-value-accesso
     }
   ],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule]
 })
 export class InputSelectComponent extends ControlValueAccessorConnectorComponent {
   @Input() readonly = false;
@@ -32,7 +32,7 @@ export class InputSelectComponent extends ControlValueAccessorConnectorComponent
   @Input() clearable = false;
   @Input() multiple = false;
 
-  id = inputUUID();
+  id = uuid();
 
   @Output() changeSelect: EventEmitter<unknown> = new EventEmitter();
 

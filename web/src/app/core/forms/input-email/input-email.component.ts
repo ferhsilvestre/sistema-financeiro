@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { inputUUID } from '@burand/angular/utils';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, OperatorFunction } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
+import { v4 as uuid } from 'uuid';
 
 import { ControlValueAccessorConnectorComponent } from '../control-value-accessor-connector';
 
@@ -25,7 +25,7 @@ export class InputEmailComponent extends ControlValueAccessorConnectorComponent 
   @Input() placeholder: string;
   @Input() label: string;
 
-  id = inputUUID();
+  id = uuid();
 
   search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
     text$.pipe(
