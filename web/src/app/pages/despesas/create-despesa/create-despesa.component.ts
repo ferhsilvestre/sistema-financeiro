@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { InputComponent } from 'src/app/core/forms/input/input.component';
+import { Despesa } from 'src/app/core/models/despesa';
 
 @Component({
   selector: 'app-create-despesa',
@@ -13,6 +14,7 @@ import { InputComponent } from 'src/app/core/forms/input/input.component';
   styleUrls: ['./create-despesa.component.scss']
 })
 export class CreateDespesaComponent implements OnInit {
+  despesa: Despesa | null = null;
   formGroup: FormGroup;
 
   constructor(
@@ -27,6 +29,14 @@ export class CreateDespesaComponent implements OnInit {
       description: ['', Validators.required],
       value: ['', Validators.required]
     });
+
+    console.log(this.despesa);
+
+    if (this.despesa) {
+      this.formGroup.patchValue({
+        ...this.despesa
+      });
+    }
   }
 
   closeModal(): void {
