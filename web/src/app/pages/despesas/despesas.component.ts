@@ -12,9 +12,7 @@ import { CreateDespesaComponent } from './create-despesa/create-despesa.componen
 export class DespesasComponent implements OnInit {
   constructor(private ngbModal: NgbModal) {}
 
-  ngOnInit(): void {
-    this.openMoalDespesa();
-  }
+  ngOnInit(): void {}
 
   openMoalDespesa(): void {
     this.ngbModal.open(CreateDespesaComponent, {
