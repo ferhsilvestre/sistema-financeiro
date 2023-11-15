@@ -1,0 +1,30 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Cadstrar Despesa</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formGroup">
+      <div class="row mb-3">
+        <div class="col-6">
+          <app-input placeholder="Ex: Ingresso" label="Nome" formControlName="description"></app-input>
+        </div>
+        <div class="col-6">
+          <app-input placeholder="Ex: R$29,99" label="Valor" formControlName="value"></app-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <app-input placeholder="Ex: 24/10/2023" label="Data" formControlName="date"></app-input>
+        </div>
+        <div class="col-6">
+          <app-input placeholder="Ex: Lazer" label="Categoria" formControlName="category"></app-input>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="closeModal()">Fechar</button>
+    <button type="button" class="btn btn-primary">Salvar</button>
+  </div>
+</div>
