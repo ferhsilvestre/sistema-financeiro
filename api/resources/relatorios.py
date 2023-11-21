@@ -35,5 +35,34 @@ class RelatorioAnual(MethodResource, Resource):
             else:
                 return relatorio, relatorio["status_code"]
 
+
+class RelatorioMensal(MethodResource, Resource):
+    @doc(description='Trás varias informações financeiras sobre o mes', tags=['Relatorios'], params={
+        'Authorization': {
+            'description': 'Normalmente: Authorization: Bearer asdf.qwer.zxcv',
+            'in': 'header',
+            'type': 'string',
+            'required': True
+        }
+    })
+    @jwt_required
+    def get(self, user_id,ano,mes):
+
+        if user_id != json.loads(managertk.decodedPayload(get_jwt_identity()))["user"]["user_id"]:
+            return {"message": "Usuários divergentes"},400
+        relatorio = relatorioMensal(user_id, ano, mes)
+
+        if relatorio:
+            if relatorio["message"] == "OK":
+
+                freshAccessToken = managertk.createFreshToken()
+                relatorio.update({"refreshToken": freshAccessToken})
+
+                return relatorio, 200
+            else:
+                return relatorio, relatorio["status_code"]
+
+        return {"message": "Login ou senhas incorretos"}, 400
+
         return {"message": "Login ou senhas incorretos"}, 400
 
