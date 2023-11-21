@@ -156,3 +156,4 @@ class CategoriasDespesas(MethodResource, Resource):
                 return categorias, categorias["status_code"]
 
         return {"message": "Login ou senhas incorretos"}, 400
+    
