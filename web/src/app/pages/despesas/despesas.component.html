@@ -29,6 +29,7 @@
               <td>{{ item.category }}</td>
               <td>
                 <button type="button" class="btn btn-info" (click)="editDespesa(item)">Editar</button>
+                <button type="button" class="btn btn-danger mx-2" (click)="excluirDespesa(item.id)">Excluir</button>
               </td>
             </tr>
           </tbody>
