@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "dev": "ng serve -o --port 4206",
+    "start": "ng serve --host 0.0.0.0 --port 4206 --disable-host-check",
+    "dev": "ng serve -o --host 0.0.0.0  --port 4206 --disable-host-check",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
