@@ -29,6 +29,14 @@ export class CreateReceitaComponent implements OnInit {
       description: ['', Validators.required],
       value: ['', Validators.required]
     });
+
+    if (this.receita) {
+      this.formGroup.patchValue({
+        date: this.receita.date,
+        description: this.receita.description,
+        value: this.receita.value
+      });
+    }
   }
 
   submit(): void {

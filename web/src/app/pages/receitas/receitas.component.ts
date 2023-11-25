@@ -61,8 +61,12 @@ export class ReceitasComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  editDespesa(receita: Receita): void {
+  editReceita(receita: Receita): void {
     this.openMoalReceita(receita);
+  }
+
+  excluirReceita(id: number): void {
+    console.log(id);
   }
 
   async openMoalReceita(receita: Receita | null = null): Promise<void> {

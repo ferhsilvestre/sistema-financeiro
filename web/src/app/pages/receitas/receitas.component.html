@@ -18,7 +18,7 @@
               <th>Data</th>
               <th>Valor</th>
               <!-- <th>Categoria</th> -->
-              <!-- <th>Ações</th> -->
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -27,10 +27,10 @@
               <td>{{ item.date | date }}</td>
               <td>{{ item.value }}</td>
               <!-- <td>{{ item.category }}</td> -->
-              <!-- <td>
+              <td>
                 <button type="button" class="btn btn-info" (click)="editReceita(item)">Editar</button>
                 <button type="button" class="btn btn-danger mx-2" (click)="excluirReceita(item.id)">Excluir</button>
-              </td> -->
+              </td>
             </tr>
           </tbody>
         </table>
