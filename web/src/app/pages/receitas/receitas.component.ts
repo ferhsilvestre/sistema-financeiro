@@ -12,13 +12,61 @@ import { CreateReceitaComponent } from './create-receita/create-receita.componen
 })
 export class ReceitasComponent implements OnInit {
   constructor(private ngbModal: NgbModal) {}
+  receitas: Receita[] = [
+    {
+      id: 1,
+      date: new Date(),
+      description: 'Salário',
+      user_id: 'o|zkR|cKKoeSYJ3IJWXrWA==',
+      value: 5999
+    },
+    {
+      id: 2,
+      date: new Date(),
+      description: 'Venda de tenis',
+      user_id: 'o|zkR|cKKoeSYJ3IJWXrWA==',
+      value: 599
+    },
+    {
+      id: 3,
+      date: new Date(),
+      description: 'Site de vendas',
+      user_id: 'o|zkR|cKKoeSYJ3IJWXrWA==',
+      value: 12999
+    },
+    {
+      id: 4,
+      date: new Date(),
+      description: 'App de finanças',
+      user_id: 'o|zkR|cKKoeSYJ3IJWXrWA==',
+      value: 39999
+    },
+    {
+      id: 5,
 
-  ngOnInit(): void {
-    this.openMoalReceita();
+      date: new Date(),
+      description: 'E-commerce',
+      user_id: 'o|zkR|cKKoeSYJ3IJWXrWA==',
+      value: 79999
+    },
+    {
+      id: 6,
+
+      date: new Date(),
+      description: 'Site institucional',
+      user_id: 'o|zkR|cKKoeSYJ3IJWXrWA==',
+      value: 5999
+    }
+  ];
+
+  ngOnInit(): void {}
+
+  editReceita(receita: Receita): void {
+    this.openMoalReceita(receita);
   }
 
-  editDespesa(receita: Receita): void {
-    this.openMoalReceita(receita);
+  excluirReceita(id: number): void {
+    console.log(id);
   }
 
   async openMoalReceita(receita: Receita | null = null): Promise<void> {

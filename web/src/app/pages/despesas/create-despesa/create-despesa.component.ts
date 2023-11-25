@@ -32,8 +32,6 @@ export class CreateDespesaComponent implements OnInit {
       value: ['', Validators.required]
     });
 
-    console.log(this.despesa);
-
     if (this.despesa) {
       this.formGroup.patchValue({
         ...this.despesa
