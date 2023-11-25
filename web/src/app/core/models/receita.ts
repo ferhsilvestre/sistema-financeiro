@@ -3,4 +3,5 @@ export interface Receita {
   description: string;
   user_id: string;
   value: number;
+  id: number;
 }
