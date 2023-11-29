@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { inputUUID } from '@burand/angular/utils';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
-
+import { v4 as uuid } from 'uuid';
 import { ControlValueAccessorConnectorComponent } from '../control-value-accessor-connector';
 
 export type InputType =
@@ -41,10 +40,10 @@ export const masks = {
     provideNgxMask()
   ],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective ]
+  imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective]
 })
 export class InputComponent extends ControlValueAccessorConnectorComponent {
-  @Input() placeholder: string ='';
+  @Input() placeholder: string = '';
   @Input() label: string = '';
   @Input() type: InputType = 'text';
   @Input() autofocus = false;
@@ -52,6 +51,6 @@ export class InputComponent extends ControlValueAccessorConnectorComponent {
     this.useMask = masks[value];
   }
 
-  id = inputUUID();
+  id = uuid();
   useMask: string = '';
 }

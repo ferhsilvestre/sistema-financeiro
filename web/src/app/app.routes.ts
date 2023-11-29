@@ -1,16 +1,45 @@
 import { Routes } from '@angular/router';
+import { LayoutsComponent } from './layouts/layouts.component';
 
 export const routes: Routes = [
   {
-    path: 'auth',
-    loadChildren: async () => (await import('./pages/sign-in/auth/auth.module')).AuthModule
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    // home
-    path: ''
-  },
-  {
-    // sistema
-    path: ''
+    path: '',
+    component: LayoutsComponent,
+    children: [
+      {
+        path: 'auth',
+        loadChildren: async () => (await import('./pages/sign-in/auth/auth.module')).AuthModule
+      },
+      {
+        path: 'home',
+        loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent)
+      },
+      {
+        path: 'despesas',
+        loadComponent: () => import('./pages/despesas/despesas.component').then(c => c.DespesasComponent)
+      },
+      {
+        path: 'receitas',
+        loadComponent: () => import('./pages/receitas/receitas.component').then(c => c.ReceitasComponent)
+      },
+      {
+        path: 'contact',
+        loadComponent: () => import('./pages/contact/contact.component').then(c => c.ContactComponent)
+      },
+      {
+        path: 'relatorios',
+        loadComponent: () => import('./pages/relatorios/relatorios.component').then(c => c.RelatoriosComponent)
+      }
+    ]
   }
+
+  // {
+  //   // sistema
+  //   path: ''
+  // }
 ];

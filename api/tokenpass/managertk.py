@@ -6,7 +6,6 @@ from tokenpass import cryptdecrypt
 
 import os
 from dotenv import load_dotenv
-from database.connection import connectionDb
 
 load_dotenv()
 

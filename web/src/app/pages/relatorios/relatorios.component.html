@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row mt-5 d-flex justify-content-between">
+    <div class="col-auto">
+      <h3>Relatórios</h3>
+    </div>
+  </div>
+
+  <div class="row mt-5 d-flex justify-content-between">
+    <div class="col-auto">
+      <h3>Relatório Mensal</h3>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-auto">
+      <h4 class="text-primary">Qual usuário ?</h4>
+      <select class="form-select" aria-label="Default select example">
+        <option *ngFor="let user of arrayDeNomes" [value]="user.id">{{ user.nome }}</option>
+      </select>
+    </div>
+
+    <div class="col-auto">
+      <h4 class="text-primary">Qual Mês ?</h4>
+      <select class="form-select" aria-label="Default select example">
+        <option *ngFor="let month of monthNames">{{ month }}</option>
+      </select>
+    </div>
+
+    <div class="col-auto">
+      <h4 class="text-primary">Qual Ano ?</h4>
+      <select class="form-select" aria-label="Default select example">
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Valor Recebido</th>
+              <th>Valor Gasto</th>
+              <th>Valor Restante (Lucro)</th>
+              <th>Com o que mais foi gasto?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of relatorioMensal">
+              <td>{{ item.recebido }}</td>
+              <td>{{ item.gasto }}</td>
+              <td>{{ item.lucro }}</td>
+              <td>
+                <button type="button" class="btn btn-info" (click)="openModal()">Visualizar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5 d-flex justify-content-between">
+    <div class="col-auto">
+      <h3>Relatório Anual</h3>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-auto">
+      <h4 class="text-primary">Qual usuário ?</h4>
+      <select class="form-select" aria-label="Default select example">
+        <option *ngFor="let user of arrayDeNomes" [value]="user.id">{{ user.nome }}</option>
+      </select>
+    </div>
+
+    <div class="col-auto">
+      <h4 class="text-primary">Qual Ano ?</h4>
+      <select class="form-select" aria-label="Default select example">
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Valor Recebido</th>
+              <th>Valor Gasto</th>
+              <th>Valor Restante (Lucro)</th>
+              <th>Com o que mais foi gasto?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of relatorioAnual">
+              <td>{{ item.recebido }}</td>
+              <td>{{ item.gasto }}</td>
+              <td>{{ item.lucro }}</td>
+              <td>
+                <button type="button" class="btn btn-info" (click)="openModal()">Visualizar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
